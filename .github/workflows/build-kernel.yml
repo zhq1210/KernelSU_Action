@@ -115,7 +115,7 @@ jobs:
         export KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)
         make -j$(nproc --all) O=out ARCH=arm64 savedefconfig
         cp -f out/defconfig arch/${{ env.TARGET_ARCH }}/configs/${{ env.KERNEL_DEFCONFIG }}
-        make -j$(nproc --all) O=out ARCH=${{ env.TARGET_ARCH }} CC=clang CROSS_COMPILE=${{ github.workspace }}/aarch64-linux-android-4.9/bin/aarch64-linux-android- CROSS_COMPILE_ARM32=${{ github.workspace }}/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
+        make -j$(nproc --all) O=out ARCH=${{ env.TARGET_ARCH }} CC=clang CROSS_COMPILE=${{ github.workspace }}/aarch64-linux-android-4.9/bin/aarch64-linux-android- CROSS_COMPILE_ARM32=${{ github.workspace }}/arm-linux-androideabi-4.9/bin/arm-linux-androideabi- CLANG_TRIPLE=aarch64-linux-gnu-
         
 
     - name: Check a kernel output files
