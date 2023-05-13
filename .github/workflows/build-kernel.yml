@@ -43,7 +43,7 @@ jobs:
          git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9 arm-linux-androideabi-4.9
          mkdir clang
          wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android11-release/clang-r383902b.tar.gz
-         tar -C clang/ -zxf clang-clang-r383902b.tar.gz
+         tar -C clang/ -zxf clang-r383902b.tar.gz
 
     - name: Download mkbootimg tools
       if: env.MAKE_BOOT_IMAGE == 'true'
