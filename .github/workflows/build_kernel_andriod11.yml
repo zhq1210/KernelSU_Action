@@ -96,6 +96,7 @@ jobs:
     - name: Generate kernel configuration
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
+        chmod +x ../scripts/clang-android.sh
         export PATH=$GITHUB_WORKSPACE/clang/bin:$PATH
         export ARCH=${{ env.TARGET_ARCH }}
         export SUBARCH=${{ env.TARGET_ARCH }}
